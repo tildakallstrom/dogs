@@ -1,0 +1,170 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+header {
+  width: 100%;
+  background-color: #86DC3D;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin-bottom: 2em;
+}
+.menu {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  transform: none;
+  z-index: 1000000000;
+  margin-top: 0.8em;
+  color: black;
+  display: inline-block;
+ top: 0;
+  z-index: 1000000000;
+ }
+ .menu a {
+  z-index: 1000000000;
+  margin: auto;
+   padding: 10px;
+   transform: none;
+   color: black;
+   text-decoration: none;
+   font-size: 1.2em;
+   font-family: 'Quicksand', sans-serif;  
+ }
+ .menu a:hover {
+ transition: 0.8s;
+ text-decoration: underline;
+ }
+.onedog {
+  border: pink;
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 3em;
+}
+footer {
+  padding-top: 2em;
+  padding-bottom: 2em;
+  background-color: #26580F;
+}
+.whitep {
+  color: white;
+  text-align: center;
+}
+.submitbtn {
+  background-color: #86DC3D;
+  border: 1px solid #26580F;
+  border-radius: 5px;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  font-size: 1em;
+}
+.submitbtn:hover {
+  background-color: #26580F;
+  color: white;
+  cursor: pointer;
+}
+
+li {
+  list-style-type: none;
+}
+form {
+  margin-top: 2em;
+}
+h1 {
+  text-align: center;
+}
+h2 {
+  margin-bottom: -1em;
+  font-size: 2em;
+  text-align: center;
+}
+h3 {
+  font-size: 1.7em;
+  margin-top: 2em;
+  margin-bottom: -1px;
+}
+.dogs {
+  max-width: 90%;
+  margin: auto;
+  margin-right: 2.5em;
+}
+.oneDog {
+  max-width: 100%;
+  margin: auto;
+}
+.btn {
+  background-color: #f14f4f;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  font-size: 1em;
+  margin-right: 0.5em;
+  margin-top: 0.5em;
+  width: 40%;
+}
+.btn:hover {
+  background-color: #26580F;
+  color: white;
+  cursor: pointer;
+}
+.btnred {
+  background-color: #86DC3D;
+  border: 1px solid #26580F;
+  border-radius: 5px;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  font-size: 1em;
+  width: 40%;
+}
+.btnred:hover {
+  background-color: #26580F;
+  color: white;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 550px) {
+  .dogform {
+    max-width: 100%;
+    margin: auto;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-bottom: 2em;
+  }
+  input {
+    max-width: 100%;
+   width: 95%;
+    margin-bottom: 1em;
+  }
+  .submitbtn {
+    width: 97%;
+  }
+}
+
+@media only screen and (min-width: 550px) {
+  .dogform {
+    max-width: 500px;
+    margin: auto;
+    margin-bottom: 2em;
+  }
+  input {
+    width: 98.5%;
+    max-width: 500px;
+    margin-bottom: 1em;
+  }
+  .submitbtn {
+    width: 100%;
+  }
+  }
