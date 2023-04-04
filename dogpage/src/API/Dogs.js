@@ -1,9 +1,7 @@
 import React,{ Component } from 'react'
 import axios from 'axios';
 
-//class
 class Dogs extends Component {
-   //constructor
     constructor(props) {
       super(props);
       this.state = { 
@@ -24,7 +22,6 @@ class Dogs extends Component {
     }
 
     componentDidMount() {
-        //Get everything from db
         axios.get('https://cryptic-peak-10746.herokuapp.com/dogs/')
         .then(response => {
             this.setState({
@@ -35,10 +32,8 @@ class Dogs extends Component {
 
          
       }
-      //change
       handleChange(event){
         this.setState({
-            //values
           [event.target.name] : event.target.value,
           [event.target.breed] : event.target.value,
           [event.target.age] : event.target.value,
@@ -49,36 +44,26 @@ class Dogs extends Component {
         })
       }
       
-    //updatebtn to fill in form
       update(dog) {
         this.setState({ name: dog.name, breed: dog.breed, age: dog.age, sex: dog.sex, merits: dog.merits, father: dog.father, mother: dog.mother, _id: dog._id, put: true })
-        //change button form add to update
         this.setState({ buttonText: "Update dog"});
       }
-//submit
     handleSubmit(event){
-    //constant values
         const {name, breed, age, sex, merits, father, mother} = this.state
       event.preventDefault()
         
-    //Check if inputs are empty
     if ( `${name}` === "" || `${breed}` === "" || `${age}` === "" || `${sex}` === "" || `${merits}` === "" || `${father}` === "" || `${mother}` === ""){
-       //errormessage
         alert("Fill in correctly")
     }
     else{
-      //check if put or post is used
       if( this.state.put === false){
       const request = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        //values
         body: JSON.stringify({ "name": `${name}`, "breed": `${breed}`, "age": `${age}`, "sex": `${sex}`,"merits": `${merits}`,"father": `${father}`,"mother": `${mother}`})
     }
-    //add
     fetch('https://cryptic-peak-10746.herokuapp.com/dogs/', request)
         .then(async response => {
-            //reload window to update site
             window.location.reload();
         })
     }
@@ -88,10 +73,8 @@ class Dogs extends Component {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ "name": `${name}`, "breed": `${breed}`, "age": `${age}`, "sex": `${sex}`,"merits": `${merits}`,"father": `${father}`,"mother": `${mother}`})
     }
-    //update
     fetch('https://cryptic-peak-10746.herokuapp.com/dogs/' + this.state._id, request)
         .then(async response => {
-           //reload window to update site
             window.location.reload();
         })
     }
@@ -100,18 +83,12 @@ class Dogs extends Component {
   
     render() {
         const { dogs } = this.state
-        //deletefunction
         function handleRemove(_id) {
-            //link + id to the dog that u want to delete
              axios.delete('https://cryptic-peak-10746.herokuapp.com/dogs/' + _id)
-             //reload to update list of dogs
              setTimeout(() => window.location.reload(), 90);  
-  
           } 
-       
-      
+
           return( 
-//everything that writesout
             <>
                 
                 <h1>Add Dog</h1>
@@ -202,9 +179,7 @@ class Dogs extends Component {
       </form>
       <div id="dogs">
       <h2>Dogs</h2>
-            {dogs.map(dog => 
-            //writeout all dogs
-            
+            {dogs.map(dog =>             
             <ul className="onedog" key={dog._id}> 
             <li><h3>{dog.name}</h3></li>
                     <li>
